@@ -1,4 +1,6 @@
 #include "Student.hpp"
+#include <iostream>
+using namespace std;
 
 /*******************************************************************************
  * Function prototypes
@@ -55,7 +57,7 @@ int main() {
 
 void getInput(Student objArray[], const int SIZE) {
     // temporary variables
-    int    t = 0;
+    int t = 0;
     string s = "";
 
     // for each student
