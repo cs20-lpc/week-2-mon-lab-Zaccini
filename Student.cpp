@@ -2,6 +2,8 @@
 #include <iostream>
 
 Student::Student() {
+    name = "Unknown Name";
+    age = 0;
     std::cout << "Student object created!" << std::endl;
 }
 

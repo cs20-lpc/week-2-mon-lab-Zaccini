@@ -62,16 +62,25 @@ void getInput(Student objArray[], const int SIZE) {
 
     // for each student
     for (int i = 0; i < SIZE; i++) {
-        // prompt and store the name of the current student
+
         cout << "Enter the name for student #" << i + 1 << ": ";
         getline(cin, s);
+        
+while (true) {
+    cout << "Enter the age for student #" << i + 1 << ": ";
+    cin >> t;
 
-        // prompt and store for the age of the current student
-        cout << "Enter the age for student #" << i + 1 << ": ";
-        cin >> t;
+    if (cin.fail() || t < 0) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid age, try again." << endl;
+    } else {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clear leftover newline
+        break;  // valid input, exit loop
+    }
+}
 
-        // need to ignore the newline for the next iteration
-        cin.ignore();
+
 
         // store the data from the user into the current object in the array
         objArray[i].setName(s);
